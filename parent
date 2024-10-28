@@ -1,0 +1,34 @@
+import React from 'react';
+export const UserContext=React.createContext();
+
+
+Parent.js
+import {UserContext} from './UseContext';
+import UserProfile from './UserProfile';
+const Parent=()=>
+{
+const user={name:'Siddhik',qualification:'Btech'};
+return(
+<UserContext.Provider value={user}>
+<UserProfile/>
+</UserContext.Provider>
+)
+}
+export default Parent;
+
+UserProfile.js
+
+import React,{useContext} from 'react';
+import { UserContext } from './UseContext';
+const UserProfile=()=>
+{
+const user=useContext(UserContext);
+return (
+<>
+<h2>User Profile</h2>
+<p>Name:{user.name}</p>
+<p>Qualification:{user.qualification}</p>
+</>
+);
+};
+export default UserProfile;
