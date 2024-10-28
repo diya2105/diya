@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+
+class ArrayTable extends Component {
+// Declare the students array as a class property or in the constructor
+students = [
+{ sno: 1, name: 'satish', branch: 'CSE' },
+{ sno: 2, name: 'Gaurav', branch: 'CIV' },
+{ sno: 3, name: 'Akhil', branch: 'ECE' }
+];
+
+render() {
+return (
+<div>
+<table border={1}>
+<thead>
+<tr>
+<th>SNO</th>
+<th>Name</th>
+<th>Branch</th>
+</tr>
+</thead>
+<tbody>
+{this.students.map((student) => (
+<tr key={student.sno}>
+<td>{student.sno}</td>
+<td>{student.name}</td>
+<td>{student.branch}</td>
+</tr>
+))}
+</tbody>
+</table>
+</div>
+);
+}
+}
+
+export default ArrayTable;
+
+APP.js
+
+import './App.css';
+import ArrayTable from './ArrayTable';
+import CounterClassComp from './CounterClassComp';
+import TextColorComponent from './TextColorComponent';
+function App() {
+  return (
+      <div className='App'>
+         <ArrayTable/>
+      </div>
+  );
+}
+export default App;
