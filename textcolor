@@ -1,0 +1,47 @@
+import React,{ Component } from 'react';
+class TextColorComponent extends Component
+{
+  constructor(props)
+  {
+      super(props);
+      this.state={
+          color : '#000000',
+      }
+  }
+  setRed=()=> {
+      this.setState(
+          {
+              color : '#ff0000'
+          }
+      );
+  };
+  setGreen=()=>{
+      this.setState(
+          {
+           color:'#00ff00'
+          }
+      );
+  };
+  setBlue=()=>{
+      this.setState(
+          {
+              color:'#0000ff'
+          }
+      );
+  };
+  render()
+  {
+      return (
+          <div>
+              <h1 style={{
+                  color:this.state.color
+              }}>Welcome To CSE Department
+              </h1>
+              <button onClick={this.setRed}>RED</button>&nbsp;&nbsp;
+              <button onClick={this.setGreen}>GREEN</button>&nbsp;&nbsp;
+              <button onClick={this.setBlue}>BLUE</button>
+          </div>
+      )
+  }
+}
+export default TextColorComponent;
