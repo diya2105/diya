@@ -1,0 +1,24 @@
+const input=[
+    { name:"john", age:13},
+    { name:"mark", age:56 },
+    { name:"rachel", age:45},
+    { name:"nate", age:67},
+    { name:"jennifer" , age:65 }];
+    const ages=input.map((person)=>person.age);
+    [Math.min(...ages),Math.max(...ages),Math.max(...ages)-Math.min(...ages)];
+const input=[1,-4,12,0,-3,29,-150];
+input.filter(function(num){
+    return num>0;
+})
+.reduce(function(accumalator,currentValue){
+return accumalator+currentValue;
+},0);
+const input=[["a","b","c",],["d","e","f"],["g","h","i"]];
+input.flat().reduce((accumalator,currentValue)=> {
+    if(accumalator[currentValue]){
+        accumalator[currentValue]+=1;
+    }else{
+        accumalator[currentValue]=1;
+    }
+    return accumalator;
+},{});
